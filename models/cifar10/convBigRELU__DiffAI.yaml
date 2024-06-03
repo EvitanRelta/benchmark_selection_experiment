@@ -1,0 +1,20 @@
+general:
+  save_output: true
+model:
+  onnx_path: /home/shauntan/benchmark_selection_experiment/models/cifar10/convBigRELU__DiffAI.onnx
+data:
+  dataset: CIFAR_ERAN
+  start: 0
+  end: 200
+specification:
+  epsilon: 0.00784313725
+attack:
+  pgd_restarts: 100
+solver:
+  batch_size: 1024
+  beta-crown:
+    iteration: 20
+bab:
+  timeout: 300
+  branching:
+    reduceop: max

@@ -1,0 +1,21 @@
+general:
+  save_output: true
+model:
+  onnx_path: /home/shauntan/benchmark_selection_experiment/models/resnet/resnet_3b2_bn_mixup_ssadv_4.0_bs128_lr-1_v2.onnx
+  onnx_quirks: "{'Reshape': {'fix_batch_size': True}}"
+data:
+  dataset: CIFAR_ERAN
+  start: 0
+  end: 200
+specification:
+  epsilon: 0.0033
+attack:
+  pgd_restarts: 100
+solver:
+  batch_size: 2048
+  beta-crown:
+    iteration: 20
+bab:
+  timeout: 300
+  branching:
+    reduceop: max
